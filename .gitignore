@@ -1,0 +1,18 @@
+# Ignorar ambientes virtuais
+venv/
+
+# Ignorar arquivos de configuração específicos do sistema
+*.log
+*.env
+.DS_Store
+Thumbs.db
+
+# Ignorar dependências do Node.js
+node_modules/
+
+# Ignorar diretórios de compilação
+dist/
+build/
+
+# Ignorar arquivos do sistema operacional
+*.swp
