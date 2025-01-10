@@ -5,3 +5,9 @@ Em alguns casos, especialmente quando se realiza ajustes finos nos parâmetros d
 Por isso, quanto mais se utiliza os mesmos dados para tomar decisões sobre configurações de melhorias no modelo ou escolha de hiperparâmetros, mais comprometida se torna a confiabilidade desses resultados ao serem generalizados para dados novos e não vistos. Isso ocorre pois as melhorias são feitas a partir desses dados de validação.
 
 É possível perceber que as melhorias aplicadas desempenham um papel fundamental para resolver o problema. Entretanto, para assegurar que o desempenho do modelo permaneça consistente em relação aos dados do mundo real, que não foram vistos no treinamento ou no aprimoramento dos modelos, a estratégia da divisão entre 3 conjuntos de dados, como se pode analisar na imagem a seguir, oferece um bom direcionamento final, já que indica se o modelo escolhido está viesado ou não em relação aos dados de validação.
+
+
+Matriz de confusão
+Para obter uma avaliação mais completa do desempenho de modelos de classificação, podemos utilizar uma ferramenta conhecida como matriz de confusão. Essa matriz oferece vantagens à pessoa cientista de dados, pelo fato de permitir entender qual a quantidade de erros e acertos das previsões de um modelo. Ao invés de uma taxa de acerto geral, a matriz é capaz de fornecer informações em uma visualização para cada uma das categorias da variável alvo.
+
+Esses valores são muito úteis para uma análise mais aprofundada do modelo de classificação. Isso permite identificar as capacidades e limitações da predição, se há um equilíbrio entre os acertos e erros ou se o resultado está tendencioso para uma classe em detrimento da outra. Com isso, é nítido que a matriz de confusão é uma ferramenta muito mais completa do que a métrica de acurácia, que representa apenas a porcentagem de acerto do modelo, sem considerar as classes de maneira isolada.
