@@ -11,3 +11,29 @@ Matriz de confusão
 Para obter uma avaliação mais completa do desempenho de modelos de classificação, podemos utilizar uma ferramenta conhecida como matriz de confusão. Essa matriz oferece vantagens à pessoa cientista de dados, pelo fato de permitir entender qual a quantidade de erros e acertos das previsões de um modelo. Ao invés de uma taxa de acerto geral, a matriz é capaz de fornecer informações em uma visualização para cada uma das categorias da variável alvo.
 
 Esses valores são muito úteis para uma análise mais aprofundada do modelo de classificação. Isso permite identificar as capacidades e limitações da predição, se há um equilíbrio entre os acertos e erros ou se o resultado está tendencioso para uma classe em detrimento da outra. Com isso, é nítido que a matriz de confusão é uma ferramenta muito mais completa do que a métrica de acurácia, que representa apenas a porcentagem de acerto do modelo, sem considerar as classes de maneira isolada.
+
+
+As principais métricas de classificação são:
+
+Acurácia
+É a métrica mais comum e básica em problemas de classificação. É utilizada para medir a proporção de dados previstos corretamente pelo modelo em relação ao total dos dados. Essa métrica é útil quando as classes da variável alvo estão balanceadas, ou seja, quando existe uma quantidade equilibrada de dados para cada classe e uma importância equivalente de classificação entre as categorias. Como exemplo de utilização, temos o reconhecimento de dígitos manuscritos. Podemos utilizar imagens de caracteres de letras e números para treinar um modelo de classificação para identificar corretamente a escrita. Como cada letra ou número não tem uma importância maior do que as demais, a acurácia se torna uma boa métrica para medir a capacidade do modelo em classificar corretamente os dígitos.
+
+Revocação (recall)
+Mede a proporção de dados positivos que foram corretamente identificados pelo modelo, ou seja, revela a capacidade do modelo em evitar a classificação incorreta de dados positivos como negativos. É usada quando o risco ou custo de classificar falsos negativos é alto. Por exemplo, em casos de diagnóstico de doenças graves, em que é fundamental detectar corretamente a presença da doença.
+
+Precisão
+Mede a proporção de dados classificados como positivos que são realmente positivos, ou seja, revela a capacidade do modelo em evitar a classificação incorreta de dados negativos como positivos. É usada quando o risco ou custo de classificar falsos positivos é alto, por exemplo em casos de seleção de ações no mercado financeiro, onde o importante é selecionar ações que tenham grande probabilidade de retorno, abaixando a quantidade de ações ruins (falsos positivos) mesmo que outras boas ações não tenham sido detectadas pelo modelo (falso negativo). A precisão também é importante no exemplo de detecção de doenças, onde queremos evitar que pacientes saudáveis sejam erroneamente classificados como doentes.
+
+F1-Score
+Fornece um equilíbrio entre o recall e a precisão, sendo útil quando as classes da variável alvo estão desbalanceadas, ou seja, quando há uma quantidade de dados muito diferente para cada classe. Além disso, é aplicável quando o risco ou custo de falsos positivos e de falsos negativos é alto simultaneamente. Em casos de detecção de tumores em pacientes, é preciso ter um equilíbrio entre evitar erros na detecção de tumores quando a pessoa realmente os possui e evitar erros ao informar que uma pessoa possui um tumor quando na realidade ela não possui.
+
+
+Curva x recall
+Como a curva de precisão x recall não avalia a taxa de verdadeiro negativos, que geralmente vai conter a maior quantidade de dados, a análise é mais concentrada na classe com menor quantidade de dados apenas, e isso faz com que a análise se torne melhor em dados desbalanceados.
+
+Relatorio de Avaliação(Modelo)
+Quando se trata de avaliar um modelo de classificação, não existe apenas uma opção para entender o comportamento do modelo e entender se está se saindo bem ou não para o problema proposto. Existem muitas métricas distintas, cada uma com sua característica e que podem ser utilizadas em conjunto para a decisão final da análise.
+
+Uma maneira muito simples de resumir o resultado de um modelo é a partir do classification_report ou relatório de classificação. Nele, é possível encontrar as principais métricas em uma única tabela.
+
+O relatório apresenta a precisão, recall e f1-score de cada classe, além de retornar uma média dessas métricas de forma geral ou ponderada em relação a quantidade de dados de cada classe.
