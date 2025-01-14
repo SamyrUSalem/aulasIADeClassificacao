@@ -37,3 +37,7 @@ Quando se trata de avaliar um modelo de classificação, não existe apenas uma 
 Uma maneira muito simples de resumir o resultado de um modelo é a partir do classification_report ou relatório de classificação. Nele, é possível encontrar as principais métricas em uma única tabela.
 
 O relatório apresenta a precisão, recall e f1-score de cada classe, além de retornar uma média dessas métricas de forma geral ou ponderada em relação a quantidade de dados de cada classe.
+
+
+Kfold
+O processo de validação cruzada consiste na criação de diversos modelos, um para cada divisão feita, utilizando 1 parte para validação e as demais para treino. Em cada um dos modelos é utilizado uma parte diferente de validação. Ao final é possível extrair uma média e intervalo de confiança com os resultados dos modelos. 
