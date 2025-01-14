@@ -41,3 +41,18 @@ O relatório apresenta a precisão, recall e f1-score de cada classe, além de r
 
 Kfold
 O processo de validação cruzada consiste na criação de diversos modelos, um para cada divisão feita, utilizando 1 parte para validação e as demais para treino. Em cada um dos modelos é utilizado uma parte diferente de validação. Ao final é possível extrair uma média e intervalo de confiança com os resultados dos modelos. 
+
+GroupKFold
+O método GroupKFold é uma variação da validação cruzada KFold tradicional e é utilizado quando os dados possuem alguma estrutura de grupo ou dependência que não deve ser quebrada, geralmente uma característica em uma das colunas da base de dados.
+
+Essa abordagem utiliza uma estratégia de separação dos dados para que os registros pertencentes a um grupo específico sejam mantidas juntas durante as divisões do KFold, garantindo que não sejam separadas entre os conjuntos de treinamento e validação. Isso é útil para evitar possíveis vieses e garantir que o modelo generalize para grupos desconhecidos, ou seja. Mesmo que não tenha um dado do grupo no conjunto de treinamento, o modelo precisará ter um bom desempenho ao prever o resultado para os dados daquele grupo.
+
+Leave-p-out
+O método Leave-p-out funciona de maneira diferente do método KFold. Ao invés de dividir o conjunto de dados em uma quantidade fixada de conjuntos, será escolhida uma quantidade 'p' de elementos para serem deixados de fora do treinamento. Os dados serão treinados em todo o restante e validados apenas nos 'p' elementos. Esse processo é repetido até que todos os dados sejam utilizados como dados de validação. O resultado final pode ser considerado a média dos resultados obtidos nos modelos, assim como é feito na validação cruzada tradicional.
+
+Isso proporciona uma validação bem mais completa, já que considera todas as combinações possíveis de dados de treino e validação. Porém, é muito mais custosa computacionalmente, já que serão criados muitos modelos e isso aumenta a quantidade conforme o conjunto de dados seja muito grande e o valor escolhido para 'p' seja pequeno.
+
+Leave-one-out
+O método Leave-one-out é uma forma especial do Leave-p-out, onde é escolhido o valor de p=1. Dessa maneira, apenas uma amostra é reservada para validação e todos os outros dados são escolhidos para treinamento. Esse processo é repetido para todas as amostras da base de dados. Isso significa que, se houver 1000 linhas na base de dados, serão treinados 1000 modelos distintos.
+
+É de se esperar que esse método demanda muito computacionalmente, pela criação de um modelo para cada linha da base de dados. Portanto, ele é indicado somente nos casos em que a base de dados é muito pequena. Nessas situações, é interessante utilizar a maior quantidade de dados possível para treinamento, para que o modelo consiga entender o padrão dos dados. Outra estratégia de validação cruzada removeria muitos dados que seriam úteis no treino.
